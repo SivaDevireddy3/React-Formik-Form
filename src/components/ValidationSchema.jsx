@@ -24,9 +24,7 @@ export const validationSchema = yup.object({
     .min(1, "Select at least one course")
     .required("Courses are required"),
 
-  instituteType: yup
-    .string()
-    .required("Please select an institute type"),
+  instituteType: yup.string().required("Please select an institute type"),
 
   endSemDate: yup
     .date()
@@ -60,13 +58,8 @@ export const validationSchema = yup.object({
     )
     .required("Institute phone number is required"),
 
-  // logo: yup
-  //   .mixed()
-  //   .required("Institute logo is required"),
-
-  // instLicence: yup
-  //   .mixed()
-  //   .required("Institute Licence file is required"),
+  // logo: yup.mixed().required("Institute logo is required"),
+  // instLicence: yup.mixed().required("Institute Licence file is required"),
 
   licenceStartDate: yup
     .date()
@@ -93,4 +86,8 @@ export const validationSchema = yup.object({
     .typeError("Course fee must be a number")
     .positive("Course fee must be greater than 0")
     .required("Course fee is required"),
+
+  // ✅ Newly added fields
+  district: yup.string().required("Please select a district"),
+  mandal: yup.string().required("Please select a mandal"),
 });
